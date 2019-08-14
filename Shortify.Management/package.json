@@ -1,0 +1,36 @@
+{
+  "name": "shortify",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cross-env NODE_ENV=development SERVER_PORT=3000 HOSTNAME=localhost REDIRECTION_PORT=4000 node index",
+    "dev": "cross-env NODE_ENV=development SERVER_PORT=3000 REDIRECTION_PORT=4000 nodemon index"
+  },
+  "author": "hara_zujo@hotmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "amqplib": "^0.5.5",
+    "bluebird": "^3.5.5",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "cross-env": "^5.2.0",
+    "dotenv": "^8.0.0",
+    "esm": "^3.2.25",
+    "express": "^4.17.1",
+    "lodash": "^4.17.15",
+    "mysql": "^2.17.1",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^10.0.2",
+    "babel-preset-es2015": "^6.24.1",
+    "eslint": "^6.1.0",
+    "rimraf": "^2.6.3"
+  },
+  "esm": {
+    "cjs": true
+  },
+  "description": ""
+}
