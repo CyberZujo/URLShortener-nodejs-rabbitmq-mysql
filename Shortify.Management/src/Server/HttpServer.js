@@ -28,11 +28,6 @@ class HttpServer {
 			});
 		});
 		this.app.use('/management', managementRouter);
-		this.app.use('/test',(req, res) => {
-			res.json({
-				message: 'test1'
-			});
-		});
 	}
 }
 
