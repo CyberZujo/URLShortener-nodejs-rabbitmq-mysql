@@ -4,25 +4,24 @@ import redis from 'async-redis';
 class RedisService {
 	async connect() {
 		let client = redis.createClient();
-		client.on('error', function (err) {
+		client.on('error', (err) => {
 			console.log('Something went wrong ', err)
 		});
 		return client;
 	}
-
 	async keyExists(key) {
 		let client = redis.createClient();
-		client.on('error', function (err) {
+		client.on('error', (err) => {
 			console.log('Error ' + err);
 		});
-		const res = await client.get(key.toString());
+		let res = await client.get(key.toString());
 		return res;
 	}
 
 	async storeData(data) {
 		try {
 			let client = redis.createClient();
-			client.on('error', function (err) {
+			client.on('error', (err) => {
 				console.log('Error ' + err);
 			});
 			let model = {
@@ -40,7 +39,7 @@ class RedisService {
 
 	async removeData(key) {
 		let client = redis.createClient();
-		client.on('error', function (err) {
+		client.on('error', (err) => {
 			console.log('Error ' + err);
 		});
 		await client.del(key);
