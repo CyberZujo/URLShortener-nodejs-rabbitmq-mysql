@@ -5,6 +5,7 @@ This is the solution of the url shortening assignment.
 
 Inside you will find two projects representing two services.<br>
 <b>Follow the instructions on how to get the project up and running.</b><br>
+<b>I would recommend testing it on MacOS also, in case rabbitmq causes some problems on Windows</b><br>
 
 1. Clone the project in some folder on your machine
 2. Navigate to Shortify.Management using command line tools and run:<br>
