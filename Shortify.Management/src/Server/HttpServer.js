@@ -22,11 +22,6 @@ class HttpServer {
 	register() {
 		this.app.use(bodyParser());
 		this.app.use(cors());
-		this.app.get('/', (req, res) => {
-			res.json({
-				message: 'Shortify'
-			});
-		});
 		this.app.use('/management', managementRouter);
 	}
 }

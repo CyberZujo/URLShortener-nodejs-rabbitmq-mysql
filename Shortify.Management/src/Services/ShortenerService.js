@@ -3,13 +3,12 @@ import logger from './LoggerService';
 
 class ShortenerService {
 	async shortenURL(url) {
-		// eslint-disable-next-line no-undef
-		let path = `http://${process.env.HOSTNAME}:${process.env.REDIRECTION_PORT}/redirection/`;
-		let longUrl = this.checkLongURL(url);
-		if (longUrl) {
-			let hash = this.getRandom();
-			let hashExists = await this.hashExists(hash);
-			if (!hashExists) {
+		try {
+			// eslint-disable-next-line no-undef
+			let path = `http://${process.env.HOSTNAME}:${process.env.REDIRECTION_PORT}/redirection/`;
+			let longUrl = this.checkLongURL(url);
+			if (longUrl) {
+				let hash = this.getRandom();
 				let shortUrl = path + hash;
 				let urlmodel = {
 					'realUrl': url,
@@ -17,8 +16,14 @@ class ShortenerService {
 					'hash': hash
 				};
 				return urlmodel;
+			
+			} else {
+				throw new Error('err');
 			}
+		} catch (error) {
+			logger.error(error);
 		}
+	
 	}
 	async hashExists(hash) {
 		const connection = await dbConnectionService.pool.getConnectionAsync();

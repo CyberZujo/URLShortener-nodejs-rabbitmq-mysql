@@ -14,12 +14,11 @@ class ManagementController {
 
 			let urlmodel = await shortenerService.shortenURL(url);
 			const data = await managementService.create(urlmodel);
-
 			if(isUndefined(data)) {
 				throw new Error('Error while storing the data');
 			}
-
 			// Having troubles here with returning the result from the message service so i didn't use this status anywhere
+
 			const status = await messagingService.pushMessage(data);
 			if (status) {
 				console.log('Message has been sent to queue');
