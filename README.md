@@ -1,7 +1,7 @@
-# URLShortener-Assignment
+# URLShortener
 
 Hi<br>
-This is the solution of the url shortening assignment.
+URL Shortener services.
 
 Inside you will find two projects representing two services.<br>
 <b>Follow the instructions on how to get the project up and running.</b><br>
